@@ -2,11 +2,11 @@
 
 ### How to install
 * Prerequisite: Install [Docker](https://docs.docker.com/get-docker/)
-1. Change CMD directory to this project path
+1. Change CommandLine directory to this project path
 ```CMD
 cd ~/PornRecommendationBackend
 ```
-2. Build docker image: Type this code in CMD which is routed to this project path
+2. Build docker image: Type this code in CommandLine which is routed to this project(folder) path
 ```CMD
 docker build -t porn-backend:1.0 .
 ```
