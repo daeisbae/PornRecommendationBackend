@@ -1,5 +1,12 @@
 # PornRecommendationBackend
 
+### Before we begin,
+Problems:
+ - Inside [app/main.py](https://github.com/daeisbae/PornRecommendationBackend/blob/main/app/main.py), I implemented pd.read_csv inside the function as I deployed the code at [Google Cloud Run](https://cloud.google.com/run/?utm_source=google&utm_medium=cpc&utm_campaign=japac-AU-all-en-dr-bkws-all-pkws-trial-e-dr-1009882&utm_content=text-ad-none-none-DEV_c-CRE_529515645060-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20Compute%20~%20Cloud%20Run_cloud%20run-general%20-%20Products-44225-KWID_43700060418856433-aud-970366092687%3Akwd-678836618089&userloc_9001527-network_g&utm_term=KW_google%20cloud%20run&gclid=CjwKCAiAtouOBhA6EiwA2nLKHw96a8vxtbKUdjVmuYGGs96Ww1R-FiyFsrpfC-n0yRY2Zc0gvkQp5hoCU2IQAvD_BwE&gclsrc=aw.ds) which is a serverless computing service.
+ - Serverless computing awakes the code/functions when it is needed which means it will initialize the code/function everytime (Code will restart everytime).
+ - In case of cloud computing like [AWS EC2](https://www.google.com/aclk?sa=L&ai=DChcSEwjphPHBsfn0AhU4H60GHauMDcAYABACGgJwdg&ae=2&sig=AOD64_2eCt0JlJRM_pTSjqM4OLchBun0wA&q&adurl&ved=2ahUKEwjziOjBsfn0AhVEKn0KHX-kC3AQ0Qx6BAgDEAE), placing pd.read_csv outside the function would be better solution, saving a lot of resources. However in serverless computing, putting pd.read_csv outside a funcion is not ideal as it will repeat pd.read_csv everytime even when reading the csv file is not needed.
+
+
 ### How to install
 * Prerequisite: Install [Docker](https://docs.docker.com/get-docker/)
 1. Change CommandLine directory to this project path
